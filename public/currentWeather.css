@@ -1,0 +1,112 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+    color: #34495E;
+    margin: 0;
+}
+
+body:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background-image: url('https://shiftyjelly.files.wordpress.com/2013/11/w.jpg?w=750&h=425');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page-wrapper {
+    margin: 10px 50px;
+    width: 750px;
+}
+
+form {
+    /* display: flex; */
+    display: inline-block;
+    justify-content: flex-start;
+    border: 1px solid #2980B9;
+    border-radius: 25px;
+    height: 50px;
+    background-color: #FDFEFE;
+}
+
+input,
+button {
+    border: none;
+    font-size: 1em;
+    background: none;
+    padding: 0 30px;
+    height: 50px;
+}
+
+input {
+    width: 200px;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: none;
+    -webkit-text-fill-color: none;
+    -webkit-box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+    color: rgba(40, 127, 184, 0.5);
+}
+
+.display-wrapper {
+    display: inline-block;
+    width: auto;
+    box-sizing: border-box;
+    border: 1px solid #2980B9;
+    padding: 50px;
+    margin: 25px 0;
+    border-radius: 25px;
+    background-color: #FDFEFE;
+}
+
+.temp {
+    display: flex;
+    align-items: center;
+}
+
+.large {
+    font-size: 3em;
+    display: flex;
+}
+
+.symbol {
+    font-size: small;
+    align-self: flex-start;
+}
+
+.button {
+    width: 150px;
+    margin: 10px 50px;
+    border: 1px solid #2980B9;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: lightgrey;
+}

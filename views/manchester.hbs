@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Weather API App</title>
+    <link rel="stylesheet" href="manchester.css">
+</head>
+
+<body>
+    <a href="/"><button class="button">Back</button></a>
+    <div class="page-wrapper">
+        <h1>7 Day weather forecast for Manchester GB</h1>
+        {{#with data}}
+        <h3>Latitude: {{lat}}</h3>
+        <h3>Longitude: {{lon}}</h3>
+        <div class="display-wrapper">
+            {{#each daily}}
+            <div class="day-wrapper">
+                <p><strong>{{getIcon dt}}</strong></p>
+                {{#each weather}}
+                <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="">
+                {{/each}}
+                {{#with temp}}
+                <div class="temp">
+                    <div>
+                        <strong>{{tempTrunc max}}<span>&#xb0;</span></strong>
+                    </div>
+                    <div>
+                        {{tempTrunc min}}<span>&#xb0;</span>
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+    <script src="https://kit.fontawesome.com/1678d1e088.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

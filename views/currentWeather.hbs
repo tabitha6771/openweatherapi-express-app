@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Weather API App</title>
+    <link rel="stylesheet" href="currentWeather.css">
+</head>
+
+<body>
+    <a href="/manchester"><button class="button">Next page</button></a>
+    <div class="page-wrapper">
+        <h1>Current weather search</h1>
+        <form action="/" method="post">
+            <input type="text" name="country" placeholder="country">
+            <input type="text" name="city" placeholder="city">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        {{#with data}}
+        {{#if name}}
+        <div class="display-wrapper">
+            <div class="place">
+                <h2>
+                    {{name}}
+                    {{#with sys}}
+                    {{country}}
+                    {{/with}}
+                </h2>
+            </div>
+            {{#each weather}}
+            <h3>{{capitalize description}}</h3>
+            <div class="temp">
+                <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="">
+                {{/each}}
+                {{#with main}}
+                <span class="large">{{tempTrunc temp}}<span class="symbol">&#8451;</span></span>
+                {{/with}}
+            </div>
+        </div>
+        {{/if}}
+        {{/with}}
+    </div>
+    <script src="https://kit.fontawesome.com/1678d1e088.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
